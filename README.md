@@ -21,7 +21,7 @@ Setup is really quite simple. Just add the schema, include the extension and you
 1. Open your Visual Studio project that already has NHibernate included.
 2. Copy the `ConfigurationExtensions.cs` into the project.
 
-Note: Visual Studio Website projects will require that the extension be located in the App_Code folder.
+Note: Visual Studio Website projects will require that the extension be located in the `App_Code` folder.
 
 Usage
 ---------
