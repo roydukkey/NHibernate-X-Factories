@@ -40,7 +40,7 @@ Usage
 		<mapping assembly="DataLayer" />
 	</session-factory>
 	
-	<session-factory name="Producton">
+	<session-factory name="Production">
 		<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
 		<property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
 		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
