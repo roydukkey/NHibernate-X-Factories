@@ -13,7 +13,7 @@ Setup is really quite simple. Just add the schema, include the extension and you
 
 1. Location the Visual Studios XML Schemas folder on your computer. Should be something similar to `%ProgramFiles%\Microsoft Visual Studio 10.0\Xml\Schemas`.
 2. Copy and paste `nhibernate-configuration-x-factories.xsd` into the Schemas folder.
-3. Change the `xmlns` attribute of the `hibernate-configuration` element in your .cfg.xml
+3. Change the `xmlns` attribute of the `hibernate-configuration` element in your .cfg.xml to `urn:nhibernate-configuration-2.2-x-factories`.
 4. Give the `session-factory` element a name and create as many `session-factory` elements as you like.
 
 **Including the Extension**
