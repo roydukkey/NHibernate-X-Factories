@@ -1,8 +1,8 @@
-﻿//---------------------------------------------------------------------------------
-// Copyright 2012 roydukkey, 2012-05-17 (Thu, 17 May 2012).
+﻿//--------------------------------------------------------------------------------------------
+// NHibernate-X-Factories v1.0.1, Copyright 2013 roydukkey, 2013-06-20 (Thu, 20 June 2013).
 // Dual licensed under the MIT (http://www.roydukkey.com/mit) and
 // GPL Version 2 (http://www.roydukkey.com/gpl) licenses.
-//---------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
 
 namespace NHibernate.Cfg
 {
@@ -58,8 +58,7 @@ namespace NHibernate.Cfg
 			namespaceMgr.AddNamespace("nhibernate", "urn:nhibernate-configuration-2.2" + CONFIG_XSD_MUTATION);
 
 			// Query Elements
-			XmlElement root = doc.DocumentElement;
-			XmlNode nhibernateNode = root.SelectSingleNode("descendant::nhibernate:hibernate-configuration", namespaceMgr);
+			XmlNode nhibernateNode = doc.SelectSingleNode("descendant::nhibernate:hibernate-configuration", namespaceMgr);
 
 			if (nhibernateNode != null) {
 				if (nhibernateNode.SelectSingleNode("descendant::nhibernate:session-factory[@name='" + factoryName + "']", namespaceMgr) != default(XmlNode))

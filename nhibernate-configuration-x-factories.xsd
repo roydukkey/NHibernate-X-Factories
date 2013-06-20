@@ -1,7 +1,7 @@
 <xs:schema targetNamespace="urn:nhibernate-configuration-2.2-x-factories" xmlns="urn:nhibernate-configuration-2.2-x-factories" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:NS="urn:nhibernate-configuration-2.2-x-factories">
 	<xs:annotation>
 		<xs:documentation>
-			Copyright 2012 roydukkey, 2012-05-17 (Thu, 17 May 2012).
+			NHibernate-X-Factories v1.0.1, Copyright 2013 roydukkey, 2013-06-20 (Thu, 20 June 2013).
 			Dual licensed under the MIT (http://www.roydukkey.com/mit) and GPL Version 2 (http://www.roydukkey.com/gpl) licenses.
 			This schema was adapted to allow multiple session-factory sections.
 		</xs:documentation>

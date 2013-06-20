@@ -1,5 +1,5 @@
-NHibernate X-Factories
-==========================
+NHibernate X-Factories v1.0.1
+=================================
 
 NHibernate X-Factories allow you to combine multiple .cfg.xml into one. X-Factories does this by allowing each session-factory to be named and refer to them individually by name.
 
@@ -21,12 +21,13 @@ Setup is really quite simple. Just add the schema, include the extension and you
 1. Open your Visual Studio project that already has NHibernate included.
 2. Copy the `ConfigurationExtensions.cs` into the project.
 
-Note: Visual Studio Website projects will require that the extension be located in the `App_Code` folder.
+Note: Visual Studio Website projects might require that the extension be located in the `App_Code` folder.
 
 Usage
 ---------
 
 ~~~ xml
+<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-configuration xmlns="urn:nhibernate-configuration-2.2-x-factories">
 	
 	<session-factory name="Development">
