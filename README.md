@@ -11,9 +11,9 @@ Setup is really quite simple. Just add the schema, include the extension and you
 
 **Adding the Schema**
 
-1. Location the Visual Studios XML Schemas folder on your computer. Should be something similar to `%ProgramFiles%\Microsoft Visual Studio 10.0\Xml\Schemas`.
-2. Copy and paste `nhibernate-configuration-x-factories.xsd` into the Schemas folder.
-3. Change the `xmlns` attribute of the `hibernate-configuration` element in your .cfg.xml to `urn:nhibernate-configuration-2.2-x-factories`.
+1. Include the schema in your Project, Solution, or Visual Studios XML Schemas folder on your computer. Should be something similar to `%ProgramFiles%\Microsoft Visual Studio 10.0\Xml\Schemas`.
+2. Change the `xmlns` attribute of the `hibernate-configuration` element in your .cfg.xml to `urn:nhibernate-configuration-2.2-x-factories`.
+3. Change `hibernate-configuration` element `hibernate-configuration-x-factories`.
 4. Give the `session-factory` element a name and create as many `session-factory` elements as you like.
 
 **Including the Extension**
@@ -28,7 +28,7 @@ Usage
 
 ~~~ xml
 <?xml version="1.0" encoding="utf-8" ?>
-<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2-x-factories">
+<hibernate-configuration-x-factories xmlns="urn:nhibernate-configuration-2.2-x-factories">
 	
 	<session-factory name="Development">
 		<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
@@ -52,7 +52,7 @@ Usage
 		<mapping assembly="DataLayer" />
 	</session-factory>
 	
-</hibernate-configuration>
+</hibernate-configuration-x-factories>
 ~~~
 
 ~~~ c

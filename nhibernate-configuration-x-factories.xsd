@@ -1,16 +1,16 @@
-<xs:schema targetNamespace="urn:nhibernate-configuration-2.2-x-factories" xmlns="urn:nhibernate-configuration-2.2-x-factories" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:NS="urn:nhibernate-configuration-2.2-x-factories">
+<xs:schema targetNamespace="urn:nhibernate-configuration-2.2-x-factories" xmlns:tns="urn:nhibernate-configuration-2.2-x-factories" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
-			NHibernate-X-Factories v1.0.1, Copyright 2013 roydukkey, 2013-06-20 (Thu, 20 June 2013).
+			NHibernate-X-Factories v1.1.0, Copyright 2014 roydukkey, 2014-05-14 (Wed, 14 May 2014).
 			Dual licensed under the MIT (http://www.roydukkey.com/mit) and GPL Version 2 (http://www.roydukkey.com/gpl) licenses.
 			This schema was adapted to allow multiple session-factory sections.
 		</xs:documentation>
 	</xs:annotation>
 	<!-- Type definitions -->
-	<xs:element name="hibernate-configuration">
+	<xs:element name="hibernate-configuration-x-factories">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="bytecode-provider" minOccurs="0" maxOccurs="1" >
+				<xs:element ref="tns:bytecode-provider" minOccurs="0" maxOccurs="1">
           <xs:annotation>
             <xs:documentation>
               There are 3 default short-cut values
@@ -22,21 +22,20 @@
             </xs:documentation>
           </xs:annotation>
         </xs:element>
-				<xs:element ref="reflection-optimizer" maxOccurs="1" minOccurs="0" />
-				<xs:element ref="session-factory" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="tns:reflection-optimizer" maxOccurs="1" minOccurs="0" />
+				<xs:element ref="tns:session-factory" minOccurs="0" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 		<xs:unique name="SessionFactoryName">
-			<xs:selector xpath="NS:session-factory" />
+			<xs:selector xpath="tns:session-factory" />
 			<xs:field xpath="@name" />
 		</xs:unique>
 	</xs:element>
 	<xs:element name="class-cache">
 		<xs:complexType>
-			<xs:sequence>
-			</xs:sequence>
+			<xs:sequence />
 			<xs:attribute name="class" type="xs:string" use="required" />
-			<xs:attributeGroup ref="cacheSpecification" />
+			<xs:attributeGroup ref="tns:cacheSpecification" />
 			<xs:attribute name="include">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -51,7 +50,7 @@
 		<xs:complexType>
 			<xs:sequence />
 			<xs:attribute name="collection" type="xs:string" use="required" />
-			<xs:attributeGroup ref="cacheSpecification" />
+			<xs:attributeGroup ref="tns:cacheSpecification" />
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="mapping">
@@ -128,14 +127,14 @@
 	<xs:element name="session-factory">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="property" minOccurs="0" maxOccurs="unbounded" />
-				<xs:element ref="mapping" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="tns:property" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="tns:mapping" minOccurs="0" maxOccurs="unbounded" />
 				<xs:choice minOccurs="0" maxOccurs="unbounded">
-					<xs:element ref="class-cache" />
-					<xs:element ref="collection-cache" />
+					<xs:element ref="tns:class-cache" />
+					<xs:element ref="tns:collection-cache" />
 				</xs:choice>
-				<xs:element ref="event" minOccurs="0" maxOccurs="unbounded" />
-				<xs:element ref="listener" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="tns:event" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="tns:listener" minOccurs="0" maxOccurs="unbounded" />
 			</xs:sequence>
 			<xs:attribute name="name" use="required" />
 		</xs:complexType>
@@ -156,16 +155,16 @@
 	<xs:element name="event">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="listener" minOccurs="1" maxOccurs="unbounded" />
+				<xs:element ref="tns:listener" minOccurs="1" maxOccurs="unbounded" />
 			</xs:sequence>
-			<xs:attribute name="type" type="listenerType" use="required" />
+			<xs:attribute name="type" type="tns:listenerType" use="required" />
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="listener">
 		<xs:complexType>
 			<xs:sequence />
 			<xs:attribute name="class" type="xs:string" use="required" />
-			<xs:attribute name="type" type="listenerType" use="optional" />
+			<xs:attribute name="type" type="tns:listenerType" use="optional" />
 		</xs:complexType>
 	</xs:element>
 	<xs:simpleType name="listenerType">
