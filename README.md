@@ -1,4 +1,4 @@
-NHibernate X-Factories v1.0.1
+NHibernate X-Factories v1.1.0
 =================================
 
 NHibernate X-Factories allow you to combine multiple .cfg.xml into one. X-Factories does this by allowing each session-factory to be named and refer to them individually by name.
