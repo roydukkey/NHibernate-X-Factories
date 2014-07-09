@@ -55,6 +55,8 @@ Usage
 </hibernate-configuration-x-factories>
 ~~~
 
+
+
 ~~~ c
 NHibernate.Cfg.Configuration config = new NHibernate.Cfg.Configuration();
 config.Configure("~/nhibernate.cfg.xml", "Development").BuildSessionFactory();
@@ -65,6 +67,10 @@ Support
 **Required**
 
 * NHibernate (http://nhforge.org/Default.aspx)
+
+**Optional**
+
+* [Configuration from Web.Config](./wiki/Configuration-from-Web.Config)
 
 
 License
