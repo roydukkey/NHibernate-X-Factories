@@ -70,7 +70,7 @@ Support
 
 **Optional**
 
-* [Configuration from Web.Config](./wiki/Configuration-from-Web.Config)
+* [Configuration from Web.Config](https://github.com/roydukkey/NHibernate-X-Factories/wiki/Configuration-from-Web.Config)
 
 
 License
