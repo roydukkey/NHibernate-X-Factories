@@ -66,6 +66,7 @@ Support
 -----------
 **Required**
 
+* .Net 3.5 ≥
 * NHibernate (http://nhforge.org/Default.aspx)
 
 **Optional**
