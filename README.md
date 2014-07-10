@@ -59,7 +59,7 @@ Usage
 
 ~~~ c
 NHibernate.Cfg.Configuration config = new NHibernate.Cfg.Configuration();
-config.Configure("~/nhibernate.cfg.xml", "Development").BuildSessionFactory();
+config.Configure(HostingEnvironment.MapPath("~/nhibernate.cfg.xml"), "Development").BuildSessionFactory();
 ~~~
 
 Support
