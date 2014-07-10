@@ -34,7 +34,9 @@ Usage
 		<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
 		<property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
 		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
-		<property name="connection.connection_string">Server=dsql01;DataBase=dbDev;uid=nhDeveloper;pwd=pass1234</property>
+		<property name="connection.connection_string">
+			Server=dsql01;DataBase=dbDev;uid=nhDeveloper;pwd=pass1234
+		</property>
 
 		<property name="show_sql">true</property>
 
@@ -45,7 +47,9 @@ Usage
 		<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
 		<property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
 		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
-		<property name="connection.connection_string">Server=psql02;DataBase=dbDev;uid=nhDeveloper;pwd=pass5678</property>
+		<property name="connection.connection_string">
+			Server=psql02;DataBase=dbDev;uid=nhDeveloper;pwd=pass5678
+		</property>
 		
 		<property name="show_sql">false</property>
 
@@ -59,7 +63,9 @@ Usage
 
 ~~~ c
 NHibernate.Cfg.Configuration config = new NHibernate.Cfg.Configuration();
-config.Configure(HostingEnvironment.MapPath("~/nhibernate.cfg.xml"), "Development").BuildSessionFactory();
+config
+	.Configure(HostingEnvironment.MapPath("~/nhibernate.cfg.xml"), "Development")
+	.BuildSessionFactory();
 ~~~
 
 Support
