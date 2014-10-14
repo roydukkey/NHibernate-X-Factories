@@ -1,7 +1,7 @@
 <xs:schema targetNamespace="urn:nhibernate-configuration-2.2-x-factories" xmlns:tns="urn:nhibernate-configuration-2.2-x-factories" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
-			NHibernate-X-Factories v1.1.0, Copyright 2014 roydukkey, 2014-05-14 (Wed, 14 May 2014).
+			NHibernate-X-Factories v1.2.0, Copyright 2014 roydukkey, 2014-10-14 (Tue, 14 Oct 2014).
 			Dual licensed under the MIT (http://www.roydukkey.com/mit) and GPL Version 2 (http://www.roydukkey.com/gpl) licenses.
 			This schema was adapted to allow multiple session-factory sections.
 		</xs:documentation>
@@ -11,17 +11,17 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="tns:bytecode-provider" minOccurs="0" maxOccurs="1">
-          <xs:annotation>
-            <xs:documentation>
-              There are 3 default short-cut values
-              - lcg     : default for .NET2.0 and higher.
-              - codedom : CodeDOM-based bytecode provider (mostly for .NET1.1).
-              - null    : Disable the reflection optimization completely.
-              In addition you can specify the AssemblyQualifiedName of your custom bytecode-provider (implementation of IBytecodeProvider).
-              Note: the bytecode-provider will be tooks in account only when specified in the app.config or web.config.
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
+					<xs:annotation>
+						<xs:documentation>
+							There are 3 default short-cut values
+							- lcg     : default for .NET2.0 and higher.
+							- codedom : CodeDOM-based bytecode provider (mostly for .NET1.1).
+							- null    : Disable the reflection optimization completely.
+							In addition you can specify the AssemblyQualifiedName of your custom bytecode-provider (implementation of IBytecodeProvider).
+							Note: the bytecode-provider will be effective only when specified in the app.config or web.config.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element ref="tns:reflection-optimizer" maxOccurs="1" minOccurs="0" />
 				<xs:element ref="tns:session-factory" minOccurs="0" maxOccurs="unbounded" />
 			</xs:sequence>
@@ -56,10 +56,10 @@
 	<xs:element name="mapping">
 		<xs:annotation>
 			<xs:documentation>
-			There are 3 possible combinations of mapping attributes
-			1 - resource &amp; assembly:  NHibernate will read the mapping resource from the specified assembly
-			2 - file only: NHibernate will read the mapping from the file.
-			3 - assembly only: NHibernate will find all the resources ending in hbm.xml from the assembly.
+				There are 3 possible combinations of mapping attributes
+				1 - resource &amp; assembly:  NHibernate will read the mapping resource from the specified assembly
+				2 - file only: NHibernate will read the mapping from the file.
+				3 - assembly only: NHibernate will find all the resources ending in hbm.xml from the assembly.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
@@ -116,8 +116,10 @@
 								<xs:enumeration value="use_sql_comments" />
 								<xs:enumeration value="format_sql" />
 								<xs:enumeration value="collectiontype.factory_class" />
-                <xs:enumeration value="order_inserts" />
-              </xs:restriction>
+								<xs:enumeration value="interceptors.beforetransactioncompletion_ignore_exceptions" />
+								<xs:enumeration value="order_inserts" />
+								<xs:enumeration value="linqtohql.generatorsregistry" />
+							</xs:restriction>
 						</xs:simpleType>
 					</xs:attribute>
 				</xs:extension>
