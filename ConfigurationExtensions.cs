@@ -1,5 +1,5 @@
 ﻿//--------------------------------------------------------------------------------------------
-// NHibernate-X-Factories v1.2.0, Copyright 2014 roydukkey, 2014-10-14 (Tue, 14 Oct 2014).
+// NHibernate-X-Factories v1.3.0, Copyright 2017 roydukkey, 2017-02-21 (Tue, 21 Feb 2017).
 // Dual licensed under the MIT (http://www.roydukkey.com/mit) and
 // GPL Version 2 (http://www.roydukkey.com/gpl) licenses.
 //--------------------------------------------------------------------------------------------
