@@ -1,7 +1,7 @@
 ﻿// ================================================================= //
 // Copyright (c) roydukkey. All rights reserved.                     //
-// Dual licensed under the MIT (http://www.roydukkey.com/mit) and    //
-// GPL Version 2 (http://www.roydukkey.com/gpl) licenses.            //
+// Licensed under the MIT license.                                   //
+// See the LICENSE file in the project root for more information.    //
 // ================================================================= //
 
 namespace NHibernate.Cfg

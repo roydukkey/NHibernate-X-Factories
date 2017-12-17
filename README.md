@@ -83,4 +83,4 @@ Support
 License
 -----------
 
-Dual licensed under the MIT (http://www.roydukkey.com/mit) and GPL (http://www.roydukkey.com/gpl) licenses.
+Licensed under the [MIT](LICENSE).

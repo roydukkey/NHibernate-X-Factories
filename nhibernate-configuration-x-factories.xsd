@@ -3,7 +3,8 @@
 		<xs:documentation>
 			NHibernate-X-Factories v1.3.0
 			Copyright (c) roydukkey. All rights reserved.
-			Dual licensed under the MIT (http://www.roydukkey.com/mit) and GPL Version 2 (http://www.roydukkey.com/gpl) licenses.
+			Licensed under the MIT license.
+			See the LICENSE file in the project root for more information.
 			This schema was adapted to allow multiple session-factory sections.
 		</xs:documentation>
 	</xs:annotation>
