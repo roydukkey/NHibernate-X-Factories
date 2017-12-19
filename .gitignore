@@ -1,0 +1,10 @@
+# User-specific files
+*.vs
+*.user
+
+# Package Managers
+packages/*
+
+# Build Artifacts
+[Bb]in
+[Oo]bj

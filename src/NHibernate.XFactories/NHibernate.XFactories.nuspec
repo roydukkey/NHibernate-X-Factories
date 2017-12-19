@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>NHibernate.XFactories</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>https://github.com/roydukkey/NHibernate-X-Factories/raw/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/roydukkey/NHibernate-X-Factories/</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/roydukkey/NHibernate-X-Factories/master/logo/NHibernate-NuGet.png</iconUrl>
+		<description>$description$</description>
+		<copyright>Copyright 2017 $author$</copyright>
+		<tags>NHibernate X-Factories Configuration</tags>
+	</metadata>
+	<files>
+		<file src="..\$title$.Templates\*.cfg.xml" target=".\ConfigurationTemplates" />
+		<file src="..\$title$.Templates\*.config" target=".\ConfigurationTemplates" />
+		<file src="..\..\LICENSE.txt" target=".\$title$.license.txt" />
+		<file src="..\..\README.md" target=".\$title$.readme.md" />
+		<file src="nhibernate-configuration-x-factories.xsd" target="." />
+	</files>
+</package>
