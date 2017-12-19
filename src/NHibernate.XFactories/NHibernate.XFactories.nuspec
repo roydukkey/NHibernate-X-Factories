@@ -13,6 +13,10 @@
 		<description>$description$</description>
 		<copyright>Copyright 2017 $author$</copyright>
 		<tags>NHibernate X-Factories Configuration</tags>
+		<dependencies>
+			<dependency id="Iesi.Collections" version="[4.0.0, 5.0.0)" />
+			<dependency id="NHibernate" version="5.0.0" />
+		</dependencies>
 	</metadata>
 	<files>
 		<file src="..\$title$.Templates\*.cfg.xml" target=".\ConfigurationTemplates" />
