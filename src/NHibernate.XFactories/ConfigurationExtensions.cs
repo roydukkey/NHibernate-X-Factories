@@ -12,7 +12,10 @@ namespace NHibernate.XFactories
 	using System.IO;
 	using System.Xml;
 
-	public static class XFactoriesExtensions
+	/// <summary>
+	/// 
+	/// </summary>
+	public static class ConfigurationExtensions
 	{
 		public const string CONFIG_MUTATION_SUFFIX = "-x-factories";
 		private const string CHILD_PREFIX_PATH = CfgXmlHelper.CfgNamespacePrefix + ":";
