@@ -8,3 +8,4 @@ packages/*
 # Build Artifacts
 [Bb]in
 [Oo]bj
+*.cache

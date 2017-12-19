@@ -12,14 +12,11 @@ namespace NHibernate.XFactories
 	using System.IO;
 	using System.Xml;
 
-	/// <summary>
-	/// 
-	/// </summary>
 	public static class ConfigurationExtensions
 	{
-		public const string CONFIG_MUTATION_SUFFIX = "-x-factories";
-		private const string CHILD_PREFIX_PATH = CfgXmlHelper.CfgNamespacePrefix + ":";
-		private const string ROOT_PREFIX_PATH = "//" + CHILD_PREFIX_PATH;
+		public const string ConfigMutationSuffix = "-x-factories";
+		private const string ChildPrefixPath = CfgXmlHelper.CfgNamespacePrefix + ":";
+		private const string RootPrefixPath = "//" + ChildPrefixPath;
 
 		/// <summary>
 		///		Configure NHibernate from a specified session-factory.
@@ -36,6 +33,7 @@ namespace NHibernate.XFactories
 
 			return config.Configure(PrepareConfiguration(doc, factoryName));
 		}
+
 		/// <summary>
 		///		Configure NHibernate from a specified session-factory.
 		/// </summary>
@@ -51,6 +49,7 @@ namespace NHibernate.XFactories
 
 			return config.Configure(PrepareConfiguration(doc, factoryName));
 		}
+
 		/// <summary>
 		///		Parses the configuration xml and ensures the target session-factory is the only one included.
 		/// </summary>
@@ -59,26 +58,28 @@ namespace NHibernate.XFactories
 		/// <returns></returns>
 		private static XmlTextReader PrepareConfiguration(XmlDocument doc, string factoryName)
 		{
-
 			// Add Proper Namespace
 			XmlNamespaceManager namespaceMgr = new XmlNamespaceManager(doc.NameTable);
-			namespaceMgr.AddNamespace(CfgXmlHelper.CfgNamespacePrefix, CfgXmlHelper.CfgSchemaXMLNS + CONFIG_MUTATION_SUFFIX);
+			namespaceMgr.AddNamespace(CfgXmlHelper.CfgNamespacePrefix, CfgXmlHelper.CfgSchemaXMLNS + ConfigMutationSuffix);
 
 			// Query Elements
-			XmlNode nhibernateNode = doc.SelectSingleNode(ROOT_PREFIX_PATH + CfgXmlHelper.CfgSectionName + CONFIG_MUTATION_SUFFIX, namespaceMgr);
+			XmlNode nhibernateNode = doc.SelectSingleNode(RootPrefixPath + CfgXmlHelper.CfgSectionName + ConfigMutationSuffix, namespaceMgr);
 
 			if (nhibernateNode != null) {
-				if (nhibernateNode.SelectSingleNode(ROOT_PREFIX_PATH + "session-factory[@name='" + factoryName + "']", namespaceMgr) != default(XmlNode))
-					foreach (XmlNode node in nhibernateNode.SelectNodes(ROOT_PREFIX_PATH + "session-factory[@name!='" + factoryName + "']", namespaceMgr))
+				if (nhibernateNode.SelectSingleNode(RootPrefixPath + "session-factory[@name='" + factoryName + "']", namespaceMgr) != default(XmlNode)) {
+					foreach (XmlNode node in nhibernateNode.SelectNodes(RootPrefixPath + "session-factory[@name!='" + factoryName + "']", namespaceMgr)) {
 						nhibernateNode.RemoveChild(node);
-				else
+					}
+				}
+				else {
 					throw new Exception(String.Format("<session-factory name=\"{0}\"> element was not found in the configuration file.", factoryName));
+				}
 			}
-			else
-				throw new Exception(String.Format("<{1}{0} xmlns=\"{2}{0}\"> element was not found in the configuration file.", CONFIG_MUTATION_SUFFIX, CfgXmlHelper.CfgSectionName, CfgXmlHelper.CfgSchemaXMLNS));
+			else {
+				throw new Exception(String.Format("<{1}{0} xmlns=\"{2}{0}\"> element was not found in the configuration file.", ConfigMutationSuffix, CfgXmlHelper.CfgSectionName, CfgXmlHelper.CfgSchemaXMLNS));
+			}
 
-			return new XmlTextReader(new StringReader(nhibernateNode.OuterXml.Replace(CONFIG_MUTATION_SUFFIX, "")));
+			return new XmlTextReader(new StringReader(nhibernateNode.OuterXml.Replace(ConfigMutationSuffix, "")));
 		}
-
 	}
 }
