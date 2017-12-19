@@ -1,27 +1,19 @@
 NHibernate X-Factories v5.0.0
 =================================
 
-NHibernate X-Factories allow you to combine multiple .cfg.xml into one. X-Factories does this by allowing each session-factory to be named and refer to them individually by name. This gives a cleaner and less verbose configuration for using NHiberate between multiple databases.
+NHibernate X-Factories allow you to combine multiple .cfg.xml into one. X-Factories does this by allowing each session-factory to be named and referred to individually by name. This gives a cleaner and less verbose configuration for using NHiberate between multiple databases.
 
 
 Setup
 ---------
 
-Setup is really quite simple. Just add the schema, include the extension and you're good to go.
+Setup is really quite simple.
 
-**Adding the Schema**
-
-1. Include the schema in your Project, Solution, or Visual Studios XML Schemas folder on your computer. Should be something similar to `%ProgramFiles%\Microsoft Visual Studio 10.0\Xml\Schemas`.
-2. Change the `xmlns` attribute of the `hibernate-configuration` element in your .cfg.xml to `urn:nhibernate-configuration-2.2-x-factories`.
-3. Change `hibernate-configuration` element `hibernate-configuration-x-factories`.
-4. Give the `session-factory` element a name and create as many `session-factory` elements as you like.
-
-**Including the Extension**
-
-1. Open your Visual Studio project that already has NHibernate included.
-2. Copy the `ConfigurationExtensions.cs` into the project.
-
-Note: Visual Studio Website projects might require that the extension be located in the `App_Code` folder.
+1. Install via [NuGet](https://www.nuget.org/packages/NHibernate.XFactories/).
+2. The `nhibernate-configuration-x-factories.xsd` scheme may be included to a Project or Solution and is available in the NuGet package root folder.
+3. Change the `xmlns` attribute of the `hibernate-configuration` element in your .cfg.xml to `urn:nhibernate-configuration-2.2-x-factories`.
+4. Change `hibernate-configuration` element to `hibernate-configuration-x-factories`.
+5. Give the `session-factory` element a name and create as many `session-factory` elements as you like.
 
 Usage
 ---------
@@ -59,9 +51,11 @@ Usage
 </hibernate-configuration-x-factories>
 ~~~
 
-
-
 ~~~ c
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.XFactories;
+
 NHibernate.Cfg.Configuration config = new NHibernate.Cfg.Configuration();
 config
 	.Configure(HostingEnvironment.MapPath("~/nhibernate.cfg.xml"), "Development")
@@ -72,8 +66,9 @@ Support
 -----------
 **Required**
 
-* .Net 3.5 ≥
-* NHibernate (http://nhforge.org/Default.aspx)
+* .Net ≥ 4.6.1
+* Iesi.Collections ≥ 4.0.0 && < 5.0.0
+* NHibernate 5.0.0 (http://nhforge.org/Default.aspx)
 
 **Optional**
 
