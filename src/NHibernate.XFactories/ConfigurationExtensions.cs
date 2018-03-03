@@ -66,17 +66,17 @@ namespace NHibernate.XFactories
 			XmlNode nhibernateNode = doc.SelectSingleNode(RootPrefixPath + CfgXmlHelper.CfgSectionName + ConfigMutationSuffix, namespaceMgr);
 
 			if (nhibernateNode != null) {
-				if (nhibernateNode.SelectSingleNode(RootPrefixPath + "session-factory[@name='" + factoryName + "']", namespaceMgr) != default(XmlNode)) {
-					foreach (XmlNode node in nhibernateNode.SelectNodes(RootPrefixPath + "session-factory[@name!='" + factoryName + "']", namespaceMgr)) {
+				if (nhibernateNode.SelectSingleNode(RootPrefixPath + $"session-factory[@name='{factoryName}']", namespaceMgr) != default(XmlNode)) {
+					foreach (XmlNode node in nhibernateNode.SelectNodes(RootPrefixPath + $"session-factory[@name!='{factoryName}']", namespaceMgr)) {
 						nhibernateNode.RemoveChild(node);
 					}
 				}
 				else {
-					throw new Exception(String.Format("<session-factory name=\"{0}\"> element was not found in the configuration file.", factoryName));
+					throw new Exception($"<session-factory name=\"{factoryName}\"> element was not found in the configuration file.");
 				}
 			}
 			else {
-				throw new Exception(String.Format("<{1}{0} xmlns=\"{2}{0}\"> element was not found in the configuration file.", ConfigMutationSuffix, CfgXmlHelper.CfgSectionName, CfgXmlHelper.CfgSchemaXMLNS));
+				throw new Exception($"<{CfgXmlHelper.CfgSectionName + ConfigMutationSuffix} xmlns=\"{CfgXmlHelper.CfgSchemaXMLNS + ConfigMutationSuffix}\"> element was not found in the configuration file.");
 			}
 
 			return new XmlTextReader(new StringReader(nhibernateNode.OuterXml.Replace(ConfigMutationSuffix, "")));
