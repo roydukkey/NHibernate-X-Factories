@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("roydukkey")]
 [assembly: AssemblyProduct("NHibernate.XFactories.Properties")]
-[assembly: AssemblyCopyright("Copyright 2017 roydukkey")]
+[assembly: AssemblyCopyright("Copyright (c) roydukkey")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Minor Version 
 //      Patch Version
 //
-[assembly: AssemblyVersion("5.0.0")]
-[assembly: AssemblyFileVersion("5.0.0")]
+[assembly: AssemblyVersion("5.1.0")]
+[assembly: AssemblyFileVersion("5.1.0")]

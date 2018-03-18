@@ -1,7 +1,7 @@
 <xs:schema targetNamespace="urn:nhibernate-configuration-2.2-x-factories" xmlns:tns="urn:nhibernate-configuration-2.2-x-factories" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
-			NHibernate-X-Factories v5.0.0
+			NHibernate-X-Factories v5.1.0
 			Copyright (c) roydukkey. All rights reserved.
 			Licensed under the MIT license.
 			See the LICENSE file in the project root for more information.
