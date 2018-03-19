@@ -1,0 +1,31 @@
+<Project>
+	<PropertyGroup>
+		<Product>NHibernate.XFactories</Product>
+		<Copyright>Licensed under the MIT license.</Copyright>
+		<Authors>roydukkey</Authors>
+		<PackageDescription>NHibernate X-Factories allows you to merge all those .cfg.xml files into one.</PackageDescription>
+		<PackageTags>NHibernate X-Factories Configuration</PackageTags>
+
+		<PackageProjectUrl>https://github.com/roydukkey/NHibernate-X-Factories/</PackageProjectUrl>
+		<PackageIconUrl>https://raw.githubusercontent.com/roydukkey/NHibernate-X-Factories/master/build/NHibernate-NuGet.png</PackageIconUrl>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/roydukkey/NHibernate-X-Factories/master/LICENSE</PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<RepositoryUrl>https://github.com/roydukkey/NHibernate-X-Factories.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<VersionMajor Condition="'$(VersionMajor)' == ''">5</VersionMajor>
+		<VersionMinor Condition="'$(VersionMinor)' == ''">1</VersionMinor>
+		<VersionPatch Condition="'$(VersionPatch)' == ''">0</VersionPatch>
+		<VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
+
+		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch)</VersionPrefix>
+		<AssemblyVersion>$(VersionMajor).$(VersionMinor).0.0</AssemblyVersion>
+		<FileVersion>$(VersionPrefix).0</FileVersion>
+		
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<TreatSpecificWarningsAsErrors />
+    
+		<DisableImplicitPackageTargetFallback>True</DisableImplicitPackageTargetFallback>
+	</PropertyGroup>
+</Project>
