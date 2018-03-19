@@ -66,9 +66,7 @@ Support
 -----------
 **Required**
 
-* .NETFramework ≥ 4.6.1
-* Iesi.Collections ≥ 4.0.0 && < 5.0.0
-* NHibernate 5.0.0 (http://nhforge.org/Default.aspx)
+* NHibernate ≥ 5.1.0 (http://nhforge.org/Default.aspx)
 
 **Optional**
 
